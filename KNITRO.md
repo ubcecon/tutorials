@@ -45,28 +45,44 @@ setx ARTELYS_LICENSE_NETWORK_ADDR "137.82.185.3:8349"
 ```
 wget -qO- https://s3-us-west-2.amazonaws.com/jesseperla.com/knitro/knitro-12.0.0-z-MacOS-64.tar.gz | tar -xzv
 ```
-2. TBD: How/where to change the environment varaibles.  ARNAV?  Can this be more idiot proof so modifying the path isn't needed?  Expand instructions
+
+2. Open your `~/.bash_profile` file (if it doesn't exist, run `cd` and then `touch .bash_profile` to create it.) Inside, add:  
+
 ```
-export ARTELYS_LICENSE_NETWORK_ADDR="137.82.185.3:8349"
-export DYLD_LIBRARY_PATH="/Users/USERNAME/knitro-12.0.0-z-MacOS-64/lib"
-export KNITRODIR="/Users/USERNAME/knitro-12.0.0-z-MacOS-64"
+export KNITRODIR="~/path/to/knitro/directory"
+export DYLD_LIBRARY_PATH="$KNITRODIR/lib"
+export ARTELYS_LICENSE_NETWORK_ADDR="turtle.econ.ubc.ca:8349"
 ```
+
+**Note:** If you already have something in `DYLD_LIBRARY_PATH`, you will need to append this folder; e.g., `export DYLD_LIBRARY_PATH="$KNITRODIR/lib:$DYLD_LIBRARY_PATH`. But most likely that variable will be empty. 
+
 3. Then `] add KNITRO` in Julia.
 
+4. Run `] test KNITRO` to confirm that it works.
+
 ### Linux
+
 0. Navigate in a terminal to where you would want to install the software
+
 1. Download the binary from [here](https://s3-us-west-2.amazonaws.com/jesseperla.com/knitro/knitro-12.0.0-z-Linux-64.tar.gz) and unpack, or just execute
+
 ```
 wget -qO- https://s3-us-west-2.amazonaws.com/jesseperla.com/knitro/knitro-12.0.0-z-Linux-64.tar.gz | tar -xzv
 ```
-2. TBD: How/where to change the environment varaibles.  ARNAV?  Can this be more idiot proof so modifying the path isn't needed?  Expand instructions
+
+2. Open your `~/.bash_profile` file (if it doesn't exist, run `cd` and then `touch .bash_profile` to create it.) Inside, add:  
+
 ```
-export ARTELYS_LICENSE_NETWORK_ADDR="137.82.185.3:8349"
-export DYLD_LIBRARY_PATH="/Users/USERNAME/knitro-12.0.0-z-MacOS-64/lib"
-export KNITRODIR="/Users/USERNAME/knitro-12.0.0-z-MacOS-64"
+export KNITRODIR="~/path/to/knitro/directory"
+export ARTELYS_LICENSE_NETWORK_ADDR="turtle.econ.ubc.ca:8349"
+export LD_LIBRARY_PATH="$KNITRODIR/lib"
 ```
+
+**Note:** If you already have something in `LD_LIBRARY_PATH`, you will need to append this folder; e.g., `export LD_LIBRARY_PATH="$KNITRODIR/lib:$LD_LIBRARY_PATH"`. But most likely that variable will be empty. 
+
 3. Then `] add KNITRO` in Julia.
 
+4. Run `] test KNITRO` to confirm that it works.
 
 ## Hints
 
