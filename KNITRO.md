@@ -96,11 +96,6 @@ m = Model(with_optimizer(KNITRO.Optimizer)) # settings for the solver
 
 JuMP.optimize!(m)
 println("x = ", value(x), " y = ", value(y))
-
-# adding a (linear) constraint
-@constraint(m, x + y == 10)
-JuMP.optimize!(m)
-println("x = ", value(x), " y = ", value(y))
 ```
 
 ## Hints
