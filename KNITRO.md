@@ -58,7 +58,6 @@ export ARTELYS_LICENSE_NETWORK_ADDR="turtle.econ.ubc.ca:8349"
 
 3. Then `] add KNITRO` in Julia.
 
-4. Run `] test KNITRO` to confirm that it works.
 
 ### Linux
 
@@ -82,7 +81,27 @@ export LD_LIBRARY_PATH="$KNITRODIR/lib"
 
 3. Then `] add KNITRO` in Julia.
 
-4. Run `] test KNITRO` to confirm that it works.
+
+## Setup Test
+
+For a discrete test of the setup, run the following in a new Jupyter notebook 
+
+```
+using JuMP,KNITRO
+m = Model(with_optimizer(KNITRO.Optimizer)) # settings for the solver
+@variable(m, x, start = 0.0)
+@variable(m, y, start = 0.0)
+
+@NLobjective(m, Min, (1-x)^2 + 100(y-x^2)^2)
+
+JuMP.optimize!(m)
+println("x = ", value(x), " y = ", value(y))
+
+# adding a (linear) constraint
+@constraint(m, x + y == 10)
+JuMP.optimize!(m)
+println("x = ", value(x), " y = ", value(y))
+```
 
 ## Hints
 
