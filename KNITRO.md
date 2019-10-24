@@ -143,7 +143,7 @@ In line (1), we set three options:
 
 * `honorbnds = 1`. Forces intermediate iterates to satisfy the bounds (not just the initial point and solution.) Helps if the bounds define a feasible space, outside of which the problem is ill-behaved. 
 
-In line (2), we define a variable `u` that is fixed at 4.
+In line (2), we define a variable `u` that is fixed at 4 through box bounds. 
 
 In line (3), we fix `v` at 5.0 in a different way (through a constraint.) Note that the initial condition for `v` is 0.0, after which it will "snap" to 5.0
 
@@ -156,3 +156,13 @@ For the full list of KNITRO solver options, see [here](https://www.artelys.com/d
 ## Hints
 
 - Knitro will make some decisions on its own, but experimenting with the [different algorithms](https://www.artelys.com/docs/knitro/2_userGuide/algorithms.html) is generally a good idea for problems where performance matters.
+
+- If your box bound is not a numeric literal (i.e., `x >= k` for some constant `k`), then `x` always needs to be on the left. That is: 
+
+```julia 
+@variable(m, x >= k) # OK 
+```
+
+```julia 
+@variable(m, k <= x) # not OK 
+```
