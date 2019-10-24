@@ -127,12 +127,15 @@ m = Model(with_optimizer(KNITRO.Optimizer, ms_enable = 1, honorbnds = 1, outlev 
 @variable(m, v, start = 0.0)
 @variable(m, 4.0 <= u <= 4.0) # (2)
 
-@NLobjective(m, Min, (1-x)^2 + 100(y-x^2)^2)
+mysquare(x) = x^2 
+register(m, :mysquare, 1, mysquare, autodiff = true) # (3)
+
+@NLobjective(m, Min, mysquare(1 - x) + 100(y-x^2)^2)
 @constraint(m, z == x + y)
-@constraint(m, v == 5.0) # (3)
+@constraint(m, v == 5.0) # (4)
 
 JuMP.optimize!(m)
-(value(x), value(y), value(z), value(v), value(u), objective_value(m), termination_status(m)) # (4)
+(value(x), value(y), value(z), value(v), value(u), objective_value(m), termination_status(m)) # (5)
 ```
 
 In line (1), we set three options: 
@@ -145,9 +148,11 @@ In line (1), we set three options:
 
 In line (2), we define a variable `u` that is fixed at 4 through box bounds. 
 
-In line (3), we fix `v` at 5.0 in a different way (through a constraint.) Note that the initial condition for `v` is 0.0, after which it will "snap" to 5.0
+In line (3), we register our own function `mysquare` for use in the model. The arguments are: `(model, :name_in_the_model, number_of_arguments, name_in_julia, autodiff = true)`. A useful pattern here is: `myFunc(x) = someFunc(x, p)`, where `p` is a bunch of parameters you don't want to pass around inside the solver. 
 
-Line (4) is how we query results from the optimized model. For more on the outputs and getter functions, see [here](http://www.juliaopt.org/JuMP.jl/v0.19.0/solutions/).
+In line (4), we fix `v` at 5.0 in a different way (through a constraint.) Note that the initial condition for `v` is 0.0, after which it will "snap" to 5.0
+
+Line (5) is how we query results from the optimized model. For more on the outputs and getter functions, see [here](http://www.juliaopt.org/JuMP.jl/v0.19.0/solutions/).
 
 For the full list of KNITRO solver options, see [here](https://www.artelys.com/docs/knitro/3_referenceManual/userOptions.html).
 
