@@ -120,7 +120,7 @@ The following code snippet is the same example as above, but using more of KNITR
 
 ```
 using JuMP, KNITRO
-m = Model(with_optimizer(KNITRO.Optimizer, ms_enable = 1, honorbnds = 1, outlev = 0)) # (1)
+m = Model(with_optimizer(KNITRO.Optimizer, ms_enable = 1, honorbnds = 1, outlev = 0, algorithm = 4, tuner = 1)) # (1)
 @variable(m, x, start = 0.0)
 @variable(m, y, start = 0.0)
 @variable(m, z, start = 0.0)
@@ -145,6 +145,10 @@ In line (1), we set three options:
 * `outlev = 0`. Minimum amount of printing. Other options are `outlev = 1, 2, 3, 4, 5, 6`. See [here](https://www.artelys.com/docs/knitro/3_referenceManual/userOptions.html#outlev) for what each does. 
 
 * `honorbnds = 1`. Forces intermediate iterates to satisfy the bounds (not just the initial point and solution.) Helps if the bounds define a feasible space, outside of which the problem is ill-behaved. 
+
+* `algorithm = 4` chooses the SQP algorithm. See [here](https://www.artelys.com/docs/knitro//2_userGuide/algorithms.html) for algorithm choices.
+
+* `tuner = 1`, which enables the KNITRO [solver parameter tuner](https://www.artelys.com/docs/knitro//2_userGuide/tuner.html#sec-tuner).
 
 In line (2), we define a variable `u` that is fixed at 4 through box bounds. 
 
