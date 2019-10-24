@@ -149,6 +149,10 @@ In line (3), we fix `v` at 5.0 in a different way (through a constraint.) Note t
 
 Line (4) is how we query results from the optimized model. For more on the outputs and getter functions, see [here](http://www.juliaopt.org/JuMP.jl/v0.19.0/solutions/).
 
+For the full list of KNITRO solver options, see [here](https://www.artelys.com/docs/knitro/3_referenceManual/userOptions.html).
+
+**Note:** If you see an error like `AttributeNotSupported`, this is likely because the `JuMP` interface for KNITRO has a bug. If that feature is essential, consider using the KNITRO-specific API found [here](https://www.artelys.com/docs/knitro/3_referenceManual/knitroJuliareference.html).
+
 ## Hints
 
 - Knitro will make some decisions on its own, but experimenting with the [different algorithms](https://www.artelys.com/docs/knitro/2_userGuide/algorithms.html) is generally a good idea for problems where performance matters.
