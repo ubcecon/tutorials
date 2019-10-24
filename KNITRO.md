@@ -132,7 +132,7 @@ m = Model(with_optimizer(KNITRO.Optimizer, ms_enable = 1, honorbnds = 1, outlev 
 @constraint(m, v == 5.0) # (3)
 
 JuMP.optimize!(m)
-(value(x), value(y), value(z), value(v), value(u), objective_value(m), termination_status(model)) # (4)
+(value(x), value(y), value(z), value(v), value(u), objective_value(m), termination_status(m)) # (4)
 ```
 
 In line (1), we set three options: 
