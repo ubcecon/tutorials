@@ -114,6 +114,41 @@ m = Model(with_optimizer(KNITRO.Optimizer))
 @show JuMP.optimize!(m)
 ```
 
+## Useful Features 
+
+The following code snippet is the same example as above, but using more of KNITRO's functionality. 
+
+```
+using JuMP, KNITRO
+m = Model(with_optimizer(KNITRO.Optimizer, ms_enable = 1, honorbnds = 1, outlev = 0)) # (1)
+@variable(m, x, start = 0.0)
+@variable(m, y, start = 0.0)
+@variable(m, z, start = 0.0)
+@variable(m, v, start = 0.0)
+@variable(m, 4.0 <= u <= 4.0) # (2)
+
+@NLobjective(m, Min, (1-x)^2 + 100(y-x^2)^2)
+@constraint(m, z == x + y)
+@constraint(m, v == 5.0) # (3)
+
+JuMP.optimize!(m)
+(value(x), value(y), value(z), value(v), value(u), objective_value(m), termination_status(model)) # (4)
+```
+
+In line (1), we set three options: 
+
+* `ms_enable = 1`, which turns on multistart. This starts the solver from a few different initial conditions, and takes the minimum over all runs.
+
+* `outlev = 0`. Minimum amount of printing. Other options are `outlev = 1, 2, 3, 4, 5, 6`. See [here](https://www.artelys.com/docs/knitro/3_referenceManual/userOptions.html#outlev) for what each does. 
+
+* `honorbnds = 1`. Forces intermediate iterates to satisfy the bounds (not just the initial point and solution.) Helps if the bounds define a feasible space, outside of which the problem is ill-behaved. 
+
+In line (2), we define a variable `u` that is fixed at 4.
+
+In line (3), we fix `v` at 5.0 in a different way (through a constraint.) Note that the initial condition for `v` is 0.0, after which it will "snap" to 5.0
+
+Line (4) is how we query results from the optimized model. For more on the outputs and getter functions, see [here](http://www.juliaopt.org/JuMP.jl/v0.19.0/solutions/).
+
 ## Hints
 
 - Knitro will make some decisions on its own, but experimenting with the [different algorithms](https://www.artelys.com/docs/knitro/2_userGuide/algorithms.html) is generally a good idea for problems where performance matters.
