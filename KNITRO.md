@@ -179,7 +179,7 @@ optimize!(m)
 For the full list of KNITRO solver options, see [here](https://www.artelys.com/docs/knitro/3_referenceManual/userOptions.html).
 
 ## Tuner
-As with most solvers, there are a number of variations on the parameters and algorithms, which can have differences in the speed of convergence.  It won't matter for a problem this small and simple, but for real problems it can be dramatic.
+As with most solvers, there are a number of variations on the parameters and [algorithms](https://www.artelys.com/docs/knitro/2_userGuide/algorithms.html) , which can have differences in the speed of convergence.  It won't matter for a problem this small and simple, but for real problems it can be dramatic.
 
 The `tuner = 1` option enables the KNITRO [solver parameter tuner](https://www.artelys.com/docs/knitro//2_userGuide/tuner.html#sec-tuner) which will try out various algorithm and setting shoices.  You generally would only run this once and then use the best options in the `algorithm` etc. later.
 
@@ -216,11 +216,7 @@ Which tells you which options you could set to get the fastest execution time.  
 However, unless the differences are dramatic, you may be better off leaving the default options.
 
 
-**Note:** If you see an error like `AttributeNotSupported`, this is likely because the `JuMP` interface for KNITRO has a bug. If that feature is essential, consider using the KNITRO-specific API found [here](https://www.artelys.com/docs/knitro/3_referenceManual/knitroJuliareference.html).
-
 ## Hints
-
-- Knitro will make some decisions on its own, but experimenting with the [different algorithms](https://www.artelys.com/docs/knitro/2_userGuide/algorithms.html) is generally a good idea for problems where performance matters.
 
 - If your box bound is not a numeric literal (i.e., `x >= k` for some constant `k`), then `x` always needs to be on the left. That is: 
 
@@ -231,3 +227,4 @@ However, unless the differences are dramatic, you may be better off leaving the 
 ```julia 
 @variable(m, k <= x) # not OK 
 ```
+- If you see an error like `AttributeNotSupported`, this is likely because the `JuMP` interface for KNITRO has a bug. If that feature is essential, consider using the KNITRO-specific API found [here](https://www.artelys.com/docs/knitro/3_referenceManual/knitroJuliareference.html).
