@@ -217,7 +217,8 @@ However, unless the differences are dramatic, you may be better off leaving the 
 
 
 ## Hints
-
+- If something is a linear or a quadratic constraint, define it as such.  Constrained optimizers have a much easier time dealing with linear/quadratic constraints
+- Don't be afraid to add in extra variables with simple linear constraints or even nonlinear definitions.  Commerical optimizers are very good at dealing with additional variables if they have a jacobian through auto-differentiation (or simply through linearity)
 - If your box bound is not a numeric literal (i.e., `x >= k` for some constant `k`), then `x` always needs to be on the left. That is: 
 
 ```julia 
