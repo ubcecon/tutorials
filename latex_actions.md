@@ -47,7 +47,7 @@ jobs:
           git checkout docs 
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add MYPATH/MYFILE.pd
+          git add MYPATH/MYFILE.pdf
           git commit -m "Add changes" -a
       - name:  push pdf
         uses: ad-m/github-push-action@v0.5.0
@@ -58,4 +58,4 @@ jobs:
 ```
  7. Choose the "Commit", which should add the workflow into your repository
  8. After this, make a modification to the `MYFILE.tex` file, push it to the server, and it should trigger the action.
- 9. The document is linked at XXXXX
+ 9. The document can be linked at https://github.com/MYUSERNAME/MYREPOSITORY/blob/docs/MYPATH/MYFILE.pdf
