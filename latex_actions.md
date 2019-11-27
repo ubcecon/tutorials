@@ -23,7 +23,7 @@ Setup:
 5. Click "setup a workflow yourself"
 6. Copy the following code into it, replacing MYUSERNAME, MYREPOSITORY, MYPATH, MYFILE appropriately
 ```yaml
-name: MYFILE build chain
+name: MYFILE Latex Build
 
 on: 
   push:
@@ -42,13 +42,20 @@ jobs:
         with:
           root_file: MYFILE.tex
           working_directory: MYPATH 
+      - name: stash pdf
+        run: |
+          mv MYPATH/MYFILE.pdf $HOME # cache the file
+      - name: checkout docs branch
+        uses: actions/checkout@v1
+        with:
+          ref: docs
       - name: commit pdf
         run: |
-          git checkout docs 
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add MYPATH/MYFILE.pdf
-          git commit -m "Add changes" -a
+          mv HOME/perlapfluegerszkup.pdf(pwd) # bring it back 
+          git add MYFILE.pdf
+          git commit -m "Add changes"
       - name:  push pdf
         uses: ad-m/github-push-action@v0.5.0
         with: 
@@ -58,4 +65,4 @@ jobs:
 ```
  7. Choose the "Commit", which should add the workflow into your repository
  8. After this, make a modification to the `MYFILE.tex` file, push it to the server, and it should trigger the action.
- 9. The document can be linked at https://github.com/MYUSERNAME/MYREPOSITORY/blob/docs/MYPATH/MYFILE.pdf
+ 9. The document can be linked at https://github.com/MYUSERNAME/MYREPOSITORY/blob/docs/MYFILE.pdf
