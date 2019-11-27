@@ -53,7 +53,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          mv HOME/perlapfluegerszkup.pdf(pwd) # bring it back 
+          mv $HOME/MYFILE.pdf $(pwd) # bring it back 
           git add MYFILE.pdf
           git commit -m "Add changes"
       - name:  push pdf
