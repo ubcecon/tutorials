@@ -12,7 +12,8 @@
 - You base your instance off of an "image" with a particular operating system.  e.g. Windows, Debian, etc.
   - All sorts of additional images in the https://aws.amazon.com/marketplace
   - Instances can also have stuff preloaded, we would just need to find nice ones.  e.g. probably datascience images/etc.?
-  - Find good "datascience" etc. images.  No stata :-)
+  - I think you can add features to the base images easily.  e.g. Add [CUDA](https://aws.amazon.com/marketplace/pp/B01LZMLK1K?qid=1575522727903&sr=0-2&ref_=srh_res_product_title)
+  - It would be helpful for a research engineer to play around and find good "datascience" etc. images.
 - With it, you only pay for time you are actively running it, and can choose to hibernate/pause.
    - If you pause, I think you only pay for the (dirt-cheap) storage of the image.
 
