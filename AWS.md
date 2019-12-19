@@ -6,7 +6,7 @@
   - More general matlab on docker: https://github.com/mathworks-ref-arch/matlab-dockerfile?s_eid=pep_ghubrefmldocker
   - https://github.com/mathworks-ref-arch  has a lot
 - Stata: https://ck37.com/post/stata-windows-amazon-ec2-guide/
-
+- Jupyter: https://d1.awsstatic.com/WWPS/pdf/AWS_Jupyter_Instance_Whitepaper_v6.pdf
 - See the [AWS Educate](https://aws.amazon.com/education/awseducate/) program
   - $100 in AWS Promotional Compute Credit per student or $200 per faculty per year.
   - Access to training materials
