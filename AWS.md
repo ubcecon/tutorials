@@ -12,6 +12,7 @@
   - Access to training materials
 - https://aws.amazon.com/image-builder/  is a new tool for building images.  Uses an Image Builder recipe?
 - Advice was to use the Amazon Deep Learning AMI - which has cuda/etc. already steup.  Just add Julia.
+  - See https://aws.amazon.com/blogs/machine-learning/get-started-with-deep-learning-using-the-aws-deep-learning-ami/
 
 ## S3
 = Mount bucket on EC2 instance: https://medium.com/tensult/aws-how-to-mount-s3-bucket-using-iam-role-on-ec2-linux-instance-ad2afd4513ef
