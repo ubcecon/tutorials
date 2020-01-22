@@ -39,7 +39,7 @@ jobs:
       - name: download paper repo
         uses: actions/checkout@v1
       - name: build pdf 
-        uses: xu-cheng/latex-action@1.2.0
+        uses: xu-cheng/latex-action@1.2.1
         with:
           root_file: MYFILE.tex
           working_directory: MYPATH 
