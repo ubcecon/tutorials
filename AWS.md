@@ -13,3 +13,5 @@ If you are doing a lot of deep-learning with tensorflow/keras, require GPUs, etc
 
 ## On signing up
 (1) When you sign up for the free option there are two options: (1) Personal, (2) Professional
+
+(2) The next step requires your credit card information, which I am not sure I should provide that information
