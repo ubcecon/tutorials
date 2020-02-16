@@ -10,3 +10,6 @@ TBD
 
 If you are doing a lot of deep-learning with tensorflow/keras, require GPUs, etc. consider the DLAMI
 - See https://aws.amazon.com/blogs/machine-learning/get-started-with-deep-learning-using-the-aws-deep-learning-ami/ for instructions.
+
+## On signing up
+(1) When you sign up for the free option there are two options: (1) Personal, (2) Professional
