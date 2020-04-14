@@ -55,6 +55,7 @@ The easiest way to compile is to put magic comments at the top of documents (con
 
 1. Install [Julia](https://julialang.org/downloads/) or see https://julia.quantecon.org/getting_started_julia/getting_started.html for more advanced instructions
 2. Install the Julia Extension: https://marketplace.visualstudio.com/items?itemName=julialang.language-julia
+3. (Optional) TOML: https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml
 
 ## Python
 
@@ -73,10 +74,16 @@ Note: If it asks you to choose a python environment, choosing `("base": conda)` 
 
 ## Remote Editing, Collaboration, and Other Extensions
 
+- Core Remote Extensions:
+  - Install OpenSSH client if required:
+    - https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse
+  - Remote Extensions: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack
+- SFTP Support: https://marketplace.visualstudio.com/iems?itemName=liximomo.sftp 
 - VS LiveShare: https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare-pack
-- Remove SSH editing: https://code.visualstudio.com/docs/remote/ssh
-- WSL: https://code.visualstudio.com/docs/remote/wsl
 
 ## Other Tutorials
-
+-  Remote Development Docs:
+    - General: https://code.visualstudio.com/docs/remote/remote-overview 
+    - Remove SSH editing: https://code.visualstudio.com/docs/remote/ssh
+    - WSL: https://code.visualstudio.com/docs/remote/wsl
 - https://medium.com/@christyjacob4/using-vscode-remotely-on-an-ec2-instance-7822c4032cff
