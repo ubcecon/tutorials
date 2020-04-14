@@ -13,6 +13,7 @@ The following are heavily opinionated set of suggested packages, tutorials, etc.
    - Spell Checking: https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
    - Markdown to PDF: https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf
    - Code Formatter: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+   - YAML support: https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml
 
 3. Go to settings with `<Ctrl-Shift-P>` and search for the following settings to change:
    - `files.eol` to `\n`
