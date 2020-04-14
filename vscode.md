@@ -73,8 +73,6 @@ If it asks you to choose a python interpretter, choosing `("base": conda)` is fi
 - Markdown to PDF: https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf
 - Code Formatter: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 
-  - Downside is it requires the
-
 ## Other Tutorials
 
 - https://medium.com/@christyjacob4/using-vscode-remotely-on-an-ec2-instance-7822c4032cff
