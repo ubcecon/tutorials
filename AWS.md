@@ -1,12 +1,12 @@
 ## Setting up AWS
 General sign-up instructions:
 1. Sign up for Free Tier https://aws.amazon.com/free  which gives you credits for cheap instances
-  - This may require a credit card.
+   - This may require a credit card.
 2. Sign up for https://aws.amazon.com/education/awseducate/ in order to get free $100 cloud credits and other materials
-  - Click on Join AWS Educate and choose if a student or eductor
-  - Use an email that is given to you by the institution you choose in the form. Do not use an alumni email (something like someone@alumni.ubc.ca) because in the verification process they do not think you are not a student anymore and may need to provide a copy of your student id.  Note that this step doesnt require a credit card information
-  -  After that you will recieve an email to confirm your email address.  If you have a problem contact their customer service at [AWS: Contact us](https://aws.amazon.com/education/awseducate/contact-us/).
-  - Wait for your application to be approved (it should not take more than 24 hours). You will recieve an email to to set your password and log in to the AWS Educate Student Portal.
+   - Click on Join AWS Educate and choose if a student or eductor
+    - Use an email that is given to you by the institution you choose in the form. Do not use an alumni email (something like someone@alumni.ubc.ca) because in the verification process they do not think you are not a student anymore and may need to provide a copy of your student id.  Note that this step doesnt require a credit card information
+    -  After that you will recieve an email to confirm your email address.  If you have a problem contact their customer service at [AWS: Contact us](https://aws.amazon.com/education/awseducate/contact-us/).
+    - Wait for your application to be approved (it should not take more than 24 hours). You will recieve an email to to set your password and log in to the AWS Educate Student Portal.
 
 ## Using Amazon Images
 
