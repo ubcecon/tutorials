@@ -8,6 +8,9 @@ General sign-up instructions:
     -  After that you will recieve an email to confirm your email address.  If you have a problem contact their customer service at [AWS: Contact us](https://aws.amazon.com/education/awseducate/contact-us/).
     - Wait for your application to be approved (it should not take more than 24 hours). You will recieve an email to to set your password and log in to the AWS Educate Student Portal.
 
+## Cloud Credits
+Amazon will sometimes provide resources to researchers for significant computational resources at no charge.  To ask for these, submit a proposal to https://aws.amazon.com/research-credits/  (dates for proposals are March 31, June 30, September 30, and December 31. )
+
 ## Using Amazon Images
 
 If you are doing a lot of deep-learning with pytorch/tensorflow/keras, require GPUs, etc. consider the DLAMI
