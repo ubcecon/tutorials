@@ -30,7 +30,7 @@ git config --global core.autocrlf false
 ## Latex
 
 1. Setup latex with either TeXLive or MikTeX (on windows)
-2. If you are on miktex on windows, manually install SyncTex
+2. (Optional, but recommended) If you are on miktex on windows, manually install SyncTex
    - Recommended approach:
      - Install [Chocaletey](https://chocolatey.org/install), a generally useful windows package manager
      - Right click on Cmd or Powershell to run as administrator, and then simply type `choco install synctex`
