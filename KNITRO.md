@@ -21,30 +21,26 @@ The Knitro license is avaiable for use within Julia, Matlab, Python, C/C++, and 
 
 To use our network license, first download the binaries
 
-- [OS/X](https://s3-us-west-2.amazonaws.com/jesseperla.com/knitro/knitro-12.0.0-z-MacOS-64.tar.gz)
-- [Linux](https://s3-us-west-2.amazonaws.com/jesseperla.com/knitro/knitro-12.0.0-z-Linux-64.tar.gz)
-
-### JupyterHub (vse.syzygy.ca)
-
-It is preinstalled.  With Julia, just go `using KNITRO`.
+- [OS/X](https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.1.1-MacOS-64.tar.gz)
+- [Linux](https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.1.1-Linux-64.tar.gz)
 
 ### Windows
-1. [Download the installer](https://s3-us-west-2.amazonaws.com/jesseperla.com/knitro/Knitro1200Installer_64.exe)
+1. Download [Windows Installer](https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/Knitro1211Installer_64.exe)
 2. Click on the installer and execute it (ignoring security warnings).  When it asks for a license file, hit next to avoid choosing one
 3. After the installation is complete, open up a powershell or cmd terminal and run the following:
 ```
 setx ARTELYS_LICENSE_NETWORK_ADDR "137.82.185.3:8349"
 ```
-4. Installing the front-end libraries then depends on the particular programming languages.  For Julia, just open a julia terminal and go
+3. Installing the front-end libraries then depends on the particular programming languages.  For Julia, just open a julia terminal and go
 ```
 ] add KNITRO
 ```
 
 ### OSX
 0. Navigate in a terminal to where you would want to install the software
-1. Download the binary from [here](https://s3-us-west-2.amazonaws.com/jesseperla.com/knitro/knitro-12.0.0-z-MacOS-64.tar.gz) and unpack, or just execute
+1. Download the binary from [here](https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.1.1-MacOS-64.tar.gz) and unpack, or just execute
 ```
-wget -qO- https://s3-us-west-2.amazonaws.com/jesseperla.com/knitro/knitro-12.0.0-z-MacOS-64.tar.gz | tar -xzv
+wget -qO- https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.1.1-MacOS-64.tar.gz | tar -xzv
 ```
 
 2. Open your `~/.bash_profile` file (if it doesn't exist, run `cd` and then `touch .bash_profile` to create it.) Inside, add:  
@@ -64,10 +60,10 @@ export ARTELYS_LICENSE_NETWORK_ADDR="turtle.econ.ubc.ca:8349"
 
 0. Navigate in a terminal to where you would want to install the software
 
-1. Download the binary from [here](https://s3-us-west-2.amazonaws.com/jesseperla.com/knitro/knitro-12.0.0-z-Linux-64.tar.gz) and unpack, or just execute
+1. Download the binary from [here](https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.1.1-Linux-64.tar.gz) and unpack, or just execute
 
 ```
-wget -qO- https://s3-us-west-2.amazonaws.com/jesseperla.com/knitro/knitro-12.0.0-z-Linux-64.tar.gz | tar -xzv
+wget -qO- https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.1.1-Linux-64.tar.gz | tar -xzv
 ```
 
 2. Open your `~/.bash_profile` file (if it doesn't exist, run `cd` and then `touch .bash_profile` to create it.) Inside, add:  
@@ -89,7 +85,7 @@ For a simple test of the setup, run the following in a new Jupyter notebook
 
 ```julia
 using JuMP, KNITRO
-m = Model(with_optimizer(KNITRO.Optimizer)) # settings for the solver
+m = Model(KNITRO.Optimizer) # settings for the solver
 @variable(m, x)
 @variable(m, y)
 
@@ -114,7 +110,7 @@ using JuMP, KNITRO
 # max( x[1] + x[2] )
 # st sqrt(x[1]^2 + x[2]^2) <= 1
 
-m = Model(with_optimizer(KNITRO.Optimizer))
+m = Model(KNITRO.Optimizer)
 
 @variable(m, x[1:2])
 @objective(m, Max, sum(x))
