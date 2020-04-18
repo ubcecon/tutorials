@@ -16,14 +16,6 @@ This is a commercial optimizer with especially strong support for
 
 The Knitro license is avaiable for use within Julia, Matlab, Python, C/C++, and even Fortran.  See the documentation for different languages.
 
-
-## General Setup
-
-To use our network license, first download the binaries
-
-- [OS/X](https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.1.1-MacOS-64.tar.gz)
-- [Linux](https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.1.1-Linux-64.tar.gz)
-
 ### Windows
 1. Download [Windows Installer](https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/Knitro1211Installer_64.exe)
 2. Click on the installer and execute it (ignoring security warnings).  When it asks for a license file, hit next to avoid choosing one
