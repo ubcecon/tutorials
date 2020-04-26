@@ -29,6 +29,12 @@ Alternatively, you can run the file directly in normal terminal
 - `<Shift-Enter>` in a `.py` file will run the python in an interactive window or terminal
 
 ## PyTorch
-- Extension: https://marketplace.visualstudio.com/items?itemName=SBSnippets.pytorch-snippets
+- Pytorch discourse: https://discuss.pytorch.org/
+  - There is also a slack for more advanced questions
+- Unit testing package: https://github.com/suriyadeepan/torchtest
+- VSCode Extension: https://marketplace.visualstudio.com/items?itemName=SBSnippets.pytorch-snippets
+- Torchscript (i.e. auto-differentiable python subset
+  - [Langugage Reference](https://pytorch.org/docs/stable/jit_language_reference.html) and [Jit reference](https://pytorch.org/docs/stable/jit.html)
+  - https://pytorch.org/docs/stable/jit_python_reference.html#python-language-reference
 - Tutorials
   - https://pytorch-for-numpy-users.wkentaro.com/
