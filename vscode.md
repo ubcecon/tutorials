@@ -30,7 +30,8 @@ git config --global core.autocrlf false
 ## Latex
 
 1. Setup latex with either TeXLive or MikTeX (on Windows)
-  - In order for SyncTex to work properly, you may need to update miktex to a more recent version using the miktex console
+   - In order for SyncTex to work properly on MikTex  you may need to update to a more recent version using the miktex console
+   
 2. Install the extension:
    https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop
 3. Install spellchecker:
@@ -43,6 +44,7 @@ The easiest way to compile is to put magic comments at the top of documents (con
 % !BIB program = bibtex
 % !TEX enableSynctex = true
 ```
+or for a more modern latex compilation, you could try `% !TEX program = lualatex` or `% !TEX program = xelatex`
 
 ## Julia
 
