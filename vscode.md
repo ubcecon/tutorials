@@ -29,18 +29,11 @@ git config --global core.autocrlf false
 
 ## Latex
 
-1. Setup latex with either TeXLive or MikTeX (on windows)
-2. (Optional, but recommended) If you are on miktex on windows, manually install SyncTex
-   - Recommended approach:
-     - Install [Chocaletey](https://chocolatey.org/install), a generally useful windows package manager
-     - Right click on Cmd or Powershell to run as administrator, and then simply type `choco install synctex`
-   - Alternatively, file files and install manually
-     - Download [synctex.exe](https://www.tug.org/svn/texlive/trunk/Master/bin/win32/synctex.exe?revision=53994&view=co)
-     - Download [kpathsea632.dll](https://www.tug.org/svn/texlive/trunk/Master/bin/win32/kpathsea632.dll?revision=53994&view=co)
-     - Put both files in your mitex binaries folder. Usually something like `C:\Program Files\MiKTeX 2.9\miktex\bin\x64 or C:\Users\USERNAME\AppData\Local\Programs\MiKTeX 2.9\miktex\bin\x64`
-3. Install the extension:
+1. Setup latex with either TeXLive or MikTeX (on Windows)
+  - In order for SyncTex to work properly, you may need to update miktex to a more recent version using the miktex console
+2. Install the extension:
    https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop
-4. Install spellchecker:
+3. Install spellchecker:
    https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
 
 The easiest way to compile is to put magic comments at the top of documents (consistent across many editors). For example,
