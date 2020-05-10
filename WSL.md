@@ -17,8 +17,8 @@ Hint on copy-paste:  One way to paste into a Windows terminal (of any sort) is t
 1. Run `Powershell` as an administrator
 2. In the Ubuntu terminal, first install python/etc. tools
 ```bash
-wget https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh
-bash Anaconda3-2019.07-Linux-x86_64.sh
+wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
+bash Anaconda3-2020.02-Linux-x86_64.sh
 ```
    - Create a directory `.conda` by running `mkdir ~/.conda` if the warning "Unable to register the environment" shows up
 3. The installation will take time. You should:
@@ -27,7 +27,7 @@ bash Anaconda3-2019.07-Linux-x86_64.sh
    - *IMPORTANT* Manually choose `yes` to have it do the `conda init`
 4. (Optional) Delete the installation file
 ```bash
-rm Anaconda3-2019.07-Linux-x86_64.sh
+rm Anaconda3-2020.02-Linux-x86_64.sh
 ```
 
 ## More Administration Tips
