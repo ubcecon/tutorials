@@ -8,6 +8,7 @@ The following are heavily opinionated set of suggested packages, tutorials, etc.
    - After installation of vscode, you should be able to click `Install` link on the webpage of any extensions
 2. (Optional) some highly recommended packages
 
+   - Github Support: https://marketplace.visualstudio.com/items?itemName=GitHub.GitHubExtensionforVisualStudio
    - Editing Markdown: https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one
    - Extra Git Tools: https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
    - Spell Checking: https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
