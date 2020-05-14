@@ -9,5 +9,6 @@ GitHub gives significant resources to faculty and students for free (including f
 - [Cluster Tools](https://github.com/ubcecon/cluster_tools)
 - [KNITRO](KNITRO.md)
 - [Python](python.md)
-- [Setting up WSL (e.g. Ubuntu on Windows 10)](https://github.com/ubcecon/tutorials/blob/master/WSL.md)
-- [Automatically Compiling Latex with GitHub Actions](https://github.com/ubcecon/tutorials/blob/master/latex_actions.md)
+- [Setting up WSL (e.g. Ubuntu on Windows 10)](WSL.md)
+- [Automatically Compiling Latex with GitHub Actions](github_actions.md#compiling-a-latex-pdf-with-github-actions)
+- [Git and Github](git.md)
