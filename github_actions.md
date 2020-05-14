@@ -1,4 +1,6 @@
-# Compiling a Latex PDF with GitHub Actions
+## Github Actions Tricks
+
+## Compiling a Latex PDF with GitHub Actions
 This tutorial explains how to have a latex document automatically compile and be available whenever the master `.tex` 
 
 Setup:
