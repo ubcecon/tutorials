@@ -1,15 +1,6 @@
 ## Install WSL from Ubuntu and Conda
 
-To get "Ubuntu on Windows" and other linux kernels see [instructions](https://docs.microsoft.com/en-us/windows/wsl/install-win10) or:
-1. Run `Powershell` as an administrator (i.e. right-click on the icon and choose `Run as Administrator`)
-2. Run `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux` and a reboot may be required
-    - Or head to **Settings** -> **Update & Security** -> **For developers** and turn on **Developer mode**
-    - Then head to **Control Panel** -> **Settings** -> **Turn Windows features on and off**, and make sure **Windows Subsystem for Linux** is ticked
-3. Download a distribution such as [Ubuntu 18.04](https://aka.ms/wsl-ubuntu-1804) to your desktop
-    - Or choose from other [distros](https://docs.microsoft.com/en-us/windows/wsl/install-manual#downloading-distros)
-4. Double-click on the downloaded `.appx` file to install follow instructions
-    - Create a unix username and password
-    - No need for these to match your windows login, but it may be convenient (especailly the login)
+To get "Ubuntu on Windows" and other linux kernels see [instructions](https://docs.microsoft.com/en-us/windows/wsl/install-win10) for installing WSL2.  It is significantly better, but may require you to update your windows version.
 
 Hint on copy-paste:  One way to paste into a Windows terminal (of any sort) is the `<ctrl-c>` text somewhere else and then, while selected in the terminal at the cursor, to `<right click>` the mouse (which pastes)
 
@@ -31,6 +22,5 @@ rm Anaconda3-2020.02-Linux-x86_64.sh
 ```
 
 ## More Administration Tips
-- (Optional): Consider activating the newest version https://docs.microsoft.com/en-us/windows/wsl/wsl2-install
 - You can reset your ubuntu setup by
   - Searching for Ubuntu from the main "Start" icon, right-click on the "Ubuntu" app, Choose "App Settings", then choose "Reset"
