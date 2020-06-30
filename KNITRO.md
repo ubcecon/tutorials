@@ -12,27 +12,24 @@ This is a commercial optimizer with especially strong support for
 - Lots of options such as [Parallel multi-start](https://www.artelys.com/docs/knitro/2_userGuide/multistart.html#sec-multistart), etc.  which might not 100% work with all languages quite yet.
 - The [Tuner](https://www.artelys.com/docs/knitro/2_userGuide/tuner.html) which tries out a bunch of optimization algorithms and reports on the best option for you.
 
-## Programming languages
+## General Setup
 
 The Knitro license is avaiable for use within Julia, Matlab, Python, C/C++, and even Fortran.  See the documentation for different languages.
 
 ### Windows
-1. Download [Windows Installer](https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/Knitro1211Installer_64.exe)
+1. Download [Windows Installer](https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/Knitro1220Installer_64.exe)
 2. Click on the installer and execute it (ignoring security warnings).  When it asks for a license file, hit next to avoid choosing one
 3. After the installation is complete, open up a powershell or cmd terminal and run the following:
 ```
 setx ARTELYS_LICENSE_NETWORK_ADDR "137.82.185.3:8349"
 ```
-3. Installing the front-end libraries then depends on the particular programming languages.  For Julia, just open a julia terminal and go
-```
-] add KNITRO
-```
+
 
 ### OSX
 0. Navigate in a terminal to where you would want to install the software
-1. Download the binary from [here](https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.1.1-MacOS-64.tar.gz) and unpack, or just execute
+1. Download the binary from [here](https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.2.0-MacOS-64.tar.gz) and unpack, or just execute
 ```
-wget -qO- https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.1.1-MacOS-64.tar.gz | tar -xzv
+wget -qO- https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.2.0-MacOS-64.tar.gz | tar -xzv
 ```
 
 2. Open your `~/.bash_profile` file (if it doesn't exist, run `cd` and then `touch .bash_profile` to create it.) Inside, add:  
@@ -45,17 +42,14 @@ export ARTELYS_LICENSE_NETWORK_ADDR="turtle.econ.ubc.ca:8349"
 
 **Note:** If you already have something in `DYLD_LIBRARY_PATH`, you will need to append this folder; e.g., `export DYLD_LIBRARY_PATH="$KNITRODIR/lib:$DYLD_LIBRARY_PATH`. But most likely that variable will be empty. 
 
-3. Then `] add KNITRO` in Julia.
-
-
 ### Linux
 
 0. Navigate in a terminal to where you would want to install the software
 
-1. Download the binary from [here](https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.1.1-Linux-64.tar.gz) and unpack, or just execute
+1. Download the binary from [here](https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.2.0-Linux-64.tar.gz) and unpack, or just execute
 
 ```
-wget -qO- https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.1.1-Linux-64.tar.gz | tar -xzv
+wget -qO- https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.2.0-Linux-64.tar.gz | tar -xzv
 ```
 
 2. Open your `~/.bash_profile` file (if it doesn't exist, run `cd` and then `touch .bash_profile` to create it.) Inside, add:  
@@ -68,10 +62,13 @@ export LD_LIBRARY_PATH="$KNITRODIR/lib"
 
 **Note:** If you already have something in `LD_LIBRARY_PATH`, you will need to append this folder; e.g., `export LD_LIBRARY_PATH="$KNITRODIR/lib:$LD_LIBRARY_PATH"`. But most likely that variable will be empty. 
 
-3. Then `] add KNITRO` in Julia.
 
+# Julia Setup Test
 
-## Setup Test
+3. After installing the front-end libraries then depends on the particular programming languages.  For Julia, just open a julia terminal and go
+```
+] add KNITRO
+```
 
 For a simple test of the setup, run the following in a new Jupyter notebook 
 
@@ -217,3 +214,29 @@ However, unless the differences are dramatic, you may be better off leaving the 
 @variable(m, k <= x) # not OK 
 ```
 - If you see an error like `AttributeNotSupported`, this is likely because the `JuMP` interface for KNITRO has a bug. If that feature is essential, consider using the KNITRO-specific API found [here](https://www.artelys.com/docs/knitro/3_referenceManual/knitroJuliareference.html).
+
+# Python
+See https://www.artelys.com/docs/knitro/2_userGuide/gettingStarted/startPython.html#how-to-use-the-knitro-python-interface for setup instructions
+After installation, try
+```python
+from knitro import *
+
+# Define the variables information
+variables = Variables(nV=4, xLoBnds=[0,0,0,0])
+
+# Define the objective information
+# Default objGoal is set to 'minimize'
+objective = Objective(objLinear=[[0, 1], [-4, -2]])
+
+# Define the constraints information
+constraints = Constraints(nC=2,
+                          cLinear=[[0, 0, 0, 1, 1, 1],
+                                   [0, 1, 2, 0, 1, 3],
+                                   [1., 1., 1., 2., 0.5, 1.]],
+                          cEqBnds=[5., 8.])
+
+# Solve the problem
+solution = optimize(variables=variables,
+                    objective=objective,
+                    constraints=constraints)
+```
