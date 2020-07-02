@@ -216,7 +216,11 @@ However, unless the differences are dramatic, you may be better off leaving the 
 - If you see an error like `AttributeNotSupported`, this is likely because the `JuMP` interface for KNITRO has a bug. If that feature is essential, consider using the KNITRO-specific API found [here](https://www.artelys.com/docs/knitro/3_referenceManual/knitroJuliareference.html).
 
 # Python
+
 See https://www.artelys.com/docs/knitro/2_userGuide/gettingStarted/startPython.html#how-to-use-the-knitro-python-interface for setup instructions
+
+**Note** that (at least on OSX) the setup script is at `examples/Python/setup.py`, and not `Python/build/setup.py` as the docs say. 
+
 After installation, try
 ```python
 from knitro import *
