@@ -27,10 +27,13 @@ setx ARTELYS_LICENSE_NETWORK_ADDR "137.82.185.3:8349"
 
 ### OSX
 0. Navigate in a terminal to where you would want to install the software
+
 1. Download the binary from [here](https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.2.0-MacOS-64.tar.gz) and unpack, or just execute
 ```
 wget -qO- https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.2.0-MacOS-64.tar.gz | tar -xzv
 ```
+
+**Note**: If you see something like `dyld: Library not loaded: /usr/local/opt/openssl/lib/libssl.1.0.0.dylib`, try changing your `openssl` version (e.g., running `brew switch openssl 1.0.2r`).
 
 2. Open your `~/.bash_profile` file (if it doesn't exist, run `cd` and then `touch .bash_profile` to create it.) Inside, add:  
 
@@ -68,9 +71,13 @@ export LD_LIBRARY_PATH="$KNITRODIR/lib"
 3. After installing the front-end libraries then depends on the particular programming languages.  For Julia, just open a julia terminal and go
 ```
 ] add KNITRO
+] test KNITRO
 ```
 
-For a simple test of the setup, run the following in a new Jupyter notebook 
+It's a good idea to at least scan the output from this, for any bolded yellow warnings. For example, this gives you an idea of what functionality is still considered experimental.
+
+
+To see the setup in action, run the following in a new Jupyter notebook 
 
 ```julia
 using JuMP, KNITRO
@@ -83,7 +90,6 @@ m = Model(KNITRO.Optimizer) # settings for the solver
 optimize!(m)
 println("x = ", value(x), " y = ", value(y))
 ```
-
 
 ## Useful Features
 
