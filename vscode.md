@@ -8,7 +8,7 @@ The following are heavily opinionated set of suggested packages, tutorials, etc.
    - After installation of vscode, you should be able to click `Install` link on the webpage of any extensions
 2. (Optional) some highly recommended packages
 
-   - Github Support: https://marketplace.visualstudio.com/items?itemName=GitHub.GitHubExtensionforVisualStudio
+   - Github Support: https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github
    - Editing Markdown: https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one
    - Extra Git Tools: https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
    - Spell Checking: https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
@@ -61,7 +61,7 @@ or for a more modern latex compilation, you could try `% !TEX program = lualatex
     "editor.defaultFormatter": "singularitti.vscode-julia-formatter"
 },
 ```
-  - Afterwards, in  vscode if you then go `ctrl-shift-p` and type `format` you will be able to choose the singularitti one as your default julia formatter
+  - Afterwards, in  vscode if you then go `ctrl-shift-p` and type `format` (alternatively go to File -> Preferences -> Settings -> Default Formatter) you will be able to choose the singularitti one as your default julia formatter
 
 ## Python
 
