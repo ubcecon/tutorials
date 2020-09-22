@@ -52,6 +52,16 @@ or for a more modern latex compilation, you could try `% !TEX program = lualatex
 1. Install [Julia](https://julialang.org/downloads/) or see https://julia.quantecon.org/getting_started_julia/getting_started.html for more advanced instructions
 2. Install the Julia Extension: https://marketplace.visualstudio.com/items?itemName=julialang.language-julia
 3. (Optional) TOML: https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml
+4. (Optional) Install Code Formatting
+   - Start up a REPL and go (inside of your main julia environemnt, not a project): `] add JuliaFormatter`
+   - Install the https://marketplace.visualstudio.com/items?itemName=singularitti.vscode-julia-formatter extension
+  - then in your `settings.json` (acccessed with `ctrl-shift-p` and type `Open Settings (JSON)` add
+```json
+  "[julia]": {
+    "editor.defaultFormatter": "singularitti.vscode-julia-formatter"
+},
+```
+  - Afterwards, in  vscode if you then go `ctrl-shift-p` and type `format` you will be able to choose the singularitti one as your default julia formatter
 
 ## Python
 
