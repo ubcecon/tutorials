@@ -12,7 +12,7 @@ General advice:
   - https://www.youtube.com/playlist?list=PLaMu-SDt_RB5NUm67hU2pdE75j6KaIOv2
 - Python Engineer youtube: https://www.youtube.com/watch?v=Hgg8Xy6IRig
   - Code is at https://github.com/python-engineer/pytorch-examples/tree/master/pytorch-lightning
-- 
+- https://github.com/PyTorchLightning/deep-learning-project-template
 
 ## Optimizing for Performance
 A checklist of your code
