@@ -89,7 +89,7 @@ Note: If it asks you to choose a python environment, choosing `("base": conda)` 
 
 ## Better Terminal and Fonts
 - VSCode and its emdedded terminal support modern fonts with ligatures, powerline, good unicode support, etc.
-- Install https://github.com/microsoft/cascadia-code or https://github.com/tonsky/FiraCode
+- Install https://github.com/cormullion/juliamono https://github.com/microsoft/cascadia-code or https://github.com/tonsky/FiraCode
   - If on Windows, you could use chocolatey with `choco install cascadiafonts`
 - [Windows Terminal](https://aka.ms/terminal) was built with Cascadia and Powerline
   - See https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup and https://docs.microsoft.com/en-us/windows/terminal/cascadia-code
