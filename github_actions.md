@@ -27,7 +27,8 @@ name: latex rough_notes
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches:
+    - main
     paths:
     - 'docs/rough_notes.tex'
 
@@ -68,8 +69,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
  7. Choose the "Commit", which should add the workflow into your repository
- 8. After this, make a modification to the `rough_notes.tex` file, push it to the server, and it should trigger the action.
- 9. Add a link to the document in the `README.md` of the repo if you wish, with text like
+ 8. After this, make a modification to the `rough_notes.tex` file, push it to the server, and it should trigger the action.  The behavior in PRs is a little different
+ 9. In addition, you can go to the `Actions` tab on the webpage, choose the action, and click `Run workflow`
+ 10. Add a link to the document in the `README.md` of the repo if you wish, with text like
 ```md
   [Rough Notes](https://github.com/MYUSERNAME/MYREPOSITORY/blob/gh_actions_builds/rough_notes.pdf)
 ```
