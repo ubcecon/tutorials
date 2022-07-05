@@ -17,7 +17,7 @@ This is a commercial optimizer with especially strong support for
 The Knitro license is avaiable for use within Julia, Matlab, Python, C/C++, and even Fortran.  See the documentation for different languages.
 
 ### Windows
-1. Download [Windows Installer](https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/Knitro1220Installer_64.exe)
+1. Download [Windows Installer](https://vse-public-files.s3.us-west-2.amazonaws.com/knitro/Knitro1310Installer_64.exe)
 2. Click on the installer and execute it (ignoring security warnings).  When it asks for a license file, hit next to avoid choosing one
 3. After the installation is complete, open up a powershell or cmd terminal and run the following:
 ```
@@ -27,9 +27,9 @@ setx ARTELYS_LICENSE_NETWORK_ADDR "137.82.185.3:8349"
 
 ### OSX
 0. Navigate in a terminal to where you would want to install the software
-1. Download the binary from [here](https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.2.0-MacOS-64.tar.gz) and unpack, or just execute
+1. Download the binary from [here](https://vse-public-files.s3.us-west-2.amazonaws.com/knitro/knitro-13.1.0-MacOS-64.tar.gz) and unpack, or just execute
 ```
-wget -qO- https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.2.0-MacOS-64.tar.gz | tar -xzv
+wget -qO- https://vse-public-files.s3.us-west-2.amazonaws.com/knitro/knitro-13.1.0-MacOS-64.tar.gz | tar -xzv
 ```
 
 2. Open your `~/.bash_profile` file (if it doesn't exist, run `cd` and then `touch .bash_profile` to create it.) Inside, add:  
@@ -39,6 +39,7 @@ export KNITRODIR="~/path/to/knitro/directory"
 export DYLD_LIBRARY_PATH="$KNITRODIR/lib"
 export ARTELYS_LICENSE_NETWORK_ADDR="turtle.econ.ubc.ca:8349"
 ```
+For apple silicon, can use `https://vse-public-files.s3.us-west-2.amazonaws.com/knitro/knitro-13.1.0-MacOS-M1.tar.gz` instead.
 
 **Note:** If you already have something in `DYLD_LIBRARY_PATH`, you will need to append this folder; e.g., `export DYLD_LIBRARY_PATH="$KNITRODIR/lib:$DYLD_LIBRARY_PATH`. But most likely that variable will be empty. 
 
@@ -46,10 +47,10 @@ export ARTELYS_LICENSE_NETWORK_ADDR="turtle.econ.ubc.ca:8349"
 
 0. Navigate in a terminal to where you would want to install the software
 
-1. Download the binary from [here](https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.2.0-Linux-64.tar.gz) and unpack, or just execute
+1. Download the binary from [here](https://vse-public-files.s3.us-west-2.amazonaws.com/knitro/knitro-13.1.0-Linux-64.tar.gz) and unpack, or just execute
 
 ```
-wget -qO- https://vse-public-files.s3-us-west-2.amazonaws.com/knitro/knitro-12.2.0-Linux-64.tar.gz | tar -xzv
+wget -qO- https://vse-public-files.s3.us-west-2.amazonaws.com/knitro/knitro-13.1.0-Linux-64.tar.gz | tar -xzv
 ```
 
 2. Open your `~/.bash_profile` file (if it doesn't exist, run `cd` and then `touch .bash_profile` to create it.) Inside, add:  
