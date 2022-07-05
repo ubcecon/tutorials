@@ -23,6 +23,7 @@ The Knitro license is avaiable for use within Julia, Matlab, Python, C/C++, and 
 ```
 setx ARTELYS_LICENSE_NETWORK_ADDR "137.82.185.3:8349"
 ```
+If you have trouble you can check `KNITRO.has_knitro()` to see if it finds the binaries for knitro, and do a `] build KNITRO` and restart julia if it seems so.
 
 
 ### OSX
@@ -75,7 +76,7 @@ For a simple test of the setup, run the following in a new Jupyter notebook
 
 ```julia
 using JuMP, KNITRO
-m = Model(KNITRO.Optimizer) # settings for the solver
+m = Model(optimizer_with_attributes(KNITRO.Optimizer)) # settings for the solver
 @variable(m, x)
 @variable(m, y)
 
@@ -100,7 +101,7 @@ using JuMP, KNITRO
 # max( x[1] + x[2] )
 # st sqrt(x[1]^2 + x[2]^2) <= 1
 
-m = Model(KNITRO.Optimizer)
+m = Model(optimizer_with_attributes(KNITRO.Optimizer))
 
 @variable(m, x[1:2])
 @objective(m, Max, sum(x))
@@ -118,8 +119,8 @@ The following code snippet is the same example as above, but using more of KNITR
 
 ```julia
 using JuMP, KNITRO
-# m = Model(with_optimizer(KNITRO.Optimizer, ms_enable = 1, honorbnds = 1, outlev = 1, algorithm = 4)) # (1)
-m = Model(with_optimizer(KNITRO.Optimizer, honorbnds = 1, outlev = 1, algorithm = 4)) # (1)
+# m = Model(optimizer_with_attributes(KNITRO.Optimizer, "honorbnds" => 1, "outlev" => 1, "algorithm" => 4, "ms_enable" => 1)) # (1)
+m = Model(optimizer_with_attributes(KNITRO.Optimizer, "honorbnds" => 1, "outlev" => 1, "algorithm" => 4)) # (1)
 @variable(m, x, start = 1.2) #(5)
 @variable(m, y)
 @variable(m, z)
@@ -171,7 +172,7 @@ The `tuner = 1` option enables the KNITRO [solver parameter tuner](https://www.a
 
 ```julia
 using JuMP, KNITRO
-m = Model(with_optimizer(KNITRO.Optimizer, tuner = 1)) # (1)
+m = Model(optimizer_with_attributes(KNITRO.Optimizer, "tuner" => 1)) # (1)
 @variable(m, x, start = 1.2) #(2)
 @variable(m, y)
 @variable(m, z)
