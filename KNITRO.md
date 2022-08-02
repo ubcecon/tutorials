@@ -69,7 +69,7 @@ export LD_LIBRARY_PATH="$KNITRODIR/lib"
 
 3. After installing the front-end libraries then depends on the particular programming languages.  For Julia, just open a julia terminal and go
 ```
-] add KNITRO
+] add KNITRO JuMP
 ```
 
 For a simple test of the setup, run the following in a new Jupyter notebook 
