@@ -62,7 +62,7 @@ jobs:
           git add rough_notes.pdf
           git commit -m "Add changes"
       - name:  push pdf
-        uses: ad-m/github-push-action@v0.5.0
+        uses: ad-m/github-push-action@v0.6.0
         with: 
           branch: gh_actions_builds 
           force: false
